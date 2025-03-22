@@ -1,26 +1,33 @@
-[gd_scene load_steps=12 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=15 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
-[ext_resource type="Texture2D" uid="uid://x4ml5vbpbghr" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
-[ext_resource type="Texture2D" uid="uid://8m6ywauev7or" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
-[ext_resource type="Texture2D" uid="uid://boybjfbofwill" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
-[ext_resource type="Texture2D" uid="uid://ddechvkto1lol" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
+[ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
+[ext_resource type="Texture2D" uid="uid://bm6k72tmjbyca" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
+[ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
+[ext_resource type="Texture2D" uid="uid://d00nldyeheey6" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
+[ext_resource type="Texture2D" uid="uid://du8x7k3ni36qi" path="res://assets/Chaise/Chair-face.png" id="7_wuy5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ugx"]
 size = Vector2(165, 165)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr35x"]
-size = Vector2(1920, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci42r"]
-size = Vector2(1920, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbu2q"]
+size = Vector2(1, 1080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxg41"]
 size = Vector2(1, 1080)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbu2q"]
-size = Vector2(1, 1080)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci42r"]
+size = Vector2(1920, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr35x"]
+size = Vector2(1920, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwp4l"]
+size = Vector2(77, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jptx"]
+size = Vector2(77, 77)
 
 [node name="Main" type="Node2D"]
 
@@ -41,29 +48,51 @@ right_texture = ExtResource("6_0vwmp")
 [node name="HitBoxPerso" type="CollisionShape2D" parent="Perso"]
 shape = SubResource("RectangleShape2D_i3ugx")
 
-[node name="MurHaut" type="StaticBody2D" parent="."]
-position = Vector2(960, 2.08165e-12)
+[node name="Murs" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MurHaut"]
-visible = false
-shape = SubResource("RectangleShape2D_mr35x")
+[node name="MurDroite" type="StaticBody2D" parent="Murs"]
+position = Vector2(1920, 540)
 
-[node name="MurBas" type="StaticBody2D" parent="."]
-position = Vector2(960, 1080)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/MurDroite"]
+shape = SubResource("RectangleShape2D_bbu2q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MurBas"]
-visible = false
-shape = SubResource("RectangleShape2D_ci42r")
-
-[node name="MurGauche" type="StaticBody2D" parent="."]
+[node name="MurGauche" type="StaticBody2D" parent="Murs"]
 position = Vector2(2.08165e-12, 540)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MurGauche"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/MurGauche"]
 visible = false
 shape = SubResource("RectangleShape2D_sxg41")
 
-[node name="MurDroite" type="StaticBody2D" parent="."]
-position = Vector2(1920, 540)
+[node name="MurBas" type="StaticBody2D" parent="Murs"]
+position = Vector2(960, 1080)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MurDroite"]
-shape = SubResource("RectangleShape2D_bbu2q")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/MurBas"]
+visible = false
+shape = SubResource("RectangleShape2D_ci42r")
+
+[node name="MurHaut" type="StaticBody2D" parent="Murs"]
+position = Vector2(960, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Murs/MurHaut"]
+visible = false
+shape = SubResource("RectangleShape2D_mr35x")
+
+[node name="Chaises" type="Node2D" parent="."]
+
+[node name="FC1" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1800, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/FC1"]
+shape = SubResource("RectangleShape2D_bwp4l")
+
+[node name="FrontChaise" type="Sprite2D" parent="Chaises/FC1"]
+texture = ExtResource("7_wuy5p")
+
+[node name="FC2" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1475, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/FC2"]
+shape = SubResource("RectangleShape2D_8jptx")
+
+[node name="FrontChaise" type="Sprite2D" parent="Chaises/FC2"]
+texture = ExtResource("7_wuy5p")

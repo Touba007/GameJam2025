@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $SpritePerso
-@export var speed = 200.0
+@export var speed = 250.0
 
 @export var front_texture: Texture
 @export var back_texture: Texture
