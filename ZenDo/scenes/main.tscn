@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
-[ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
+[ext_resource type="Script" uid="uid://v40b4v20ffju" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
 [ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
 [ext_resource type="Texture2D" uid="uid://bm6k72tmjbyca" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
 [ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
