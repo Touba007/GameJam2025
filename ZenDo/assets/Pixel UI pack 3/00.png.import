@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csl0r4golvot"
-path="res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"
+uid="uid://cwnf31qwbvnrf"
+path="res://.godot/imported/00.png-8c3553f592873c11cc9130317607e4bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sol.png"
-dest_files=["res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"]
+source_file="res://assets/Pixel UI pack 3/00.png"
+dest_files=["res://.godot/imported/00.png-8c3553f592873c11cc9130317607e4bb.ctex"]
 
 [params]
 
