@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=24 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
 [ext_resource type="Texture2D" uid="uid://d00nldyeheey6" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
 [ext_resource type="Texture2D" uid="uid://du8x7k3ni36qi" path="res://assets/Chaise/Chair-face.png" id="7_wuy5p"]
+[ext_resource type="Texture2D" uid="uid://ghye515nhg7v" path="res://assets/Chaise/Chair-back.png" id="8_f2k2g"]
+[ext_resource type="Texture2D" uid="uid://cmwo1muuowm0m" path="res://assets/Table/small-table.png" id="9_4bhek"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ugx"]
-size = Vector2(165, 165)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
+radius = 65.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbu2q"]
 size = Vector2(1, 1080)
@@ -29,6 +31,27 @@ size = Vector2(77, 77)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jptx"]
 size = Vector2(77, 77)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lhhg"]
+size = Vector2(77, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iapp7"]
+size = Vector2(77, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7jx"]
+size = Vector2(77, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_224sv"]
+size = Vector2(77, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8mks"]
+size = Vector2(95, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyrev"]
+size = Vector2(95, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_detwt"]
+size = Vector2(95, 76)
+
 [node name="Main" type="Node2D"]
 
 [node name="Sol" type="Sprite2D" parent="."]
@@ -46,7 +69,8 @@ right_texture = ExtResource("6_0vwmp")
 [node name="SpritePerso" type="Sprite2D" parent="Perso"]
 
 [node name="HitBoxPerso" type="CollisionShape2D" parent="Perso"]
-shape = SubResource("RectangleShape2D_i3ugx")
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_4apfa")
 
 [node name="Murs" type="Node2D" parent="."]
 
@@ -89,10 +113,75 @@ shape = SubResource("RectangleShape2D_bwp4l")
 texture = ExtResource("7_wuy5p")
 
 [node name="FC2" type="StaticBody2D" parent="Chaises"]
-position = Vector2(1475, 100)
+position = Vector2(1480, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/FC2"]
 shape = SubResource("RectangleShape2D_8jptx")
 
 [node name="FrontChaise" type="Sprite2D" parent="Chaises/FC2"]
 texture = ExtResource("7_wuy5p")
+
+[node name="FC3" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1150, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/FC3"]
+shape = SubResource("RectangleShape2D_7lhhg")
+
+[node name="FrontChaise" type="Sprite2D" parent="Chaises/FC3"]
+texture = ExtResource("7_wuy5p")
+
+[node name="BC1" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1801, 284)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/BC1"]
+shape = SubResource("RectangleShape2D_iapp7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chaises/BC1"]
+texture = ExtResource("8_f2k2g")
+
+[node name="BC2" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1481, 283)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/BC2"]
+shape = SubResource("RectangleShape2D_0h7jx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chaises/BC2"]
+texture = ExtResource("8_f2k2g")
+
+[node name="BC3" type="StaticBody2D" parent="Chaises"]
+position = Vector2(1151, 282)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaises/BC3"]
+shape = SubResource("RectangleShape2D_224sv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chaises/BC3"]
+texture = ExtResource("8_f2k2g")
+
+[node name="Tables" type="Node2D" parent="."]
+
+[node name="SM1" type="StaticBody2D" parent="Tables"]
+position = Vector2(1801, 195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/SM1"]
+shape = SubResource("RectangleShape2D_m8mks")
+
+[node name="SmallTable" type="Sprite2D" parent="Tables/SM1"]
+texture = ExtResource("9_4bhek")
+
+[node name="SM2" type="StaticBody2D" parent="Tables"]
+position = Vector2(1482, 193)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/SM2"]
+shape = SubResource("RectangleShape2D_cyrev")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tables/SM2"]
+texture = ExtResource("9_4bhek")
+
+[node name="SM3" type="StaticBody2D" parent="Tables"]
+position = Vector2(1151, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/SM3"]
+shape = SubResource("RectangleShape2D_detwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tables/SM3"]
+texture = ExtResource("9_4bhek")
