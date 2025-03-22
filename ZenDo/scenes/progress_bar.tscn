@@ -84,5 +84,3 @@ sprite_frames = SubResource("SpriteFrames_6f0nq")
 [node name="progress_bar" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_l56g0")
-frame = 6
-frame_progress = 1.0
