@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2km4avc6wg0u"
-path="res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"
+uid="uid://31qswdfnei7y"
+path="res://.godot/imported/Mid.png-81e9dd6499b5631573feb3e147f6390f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sol.png"
-dest_files=["res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"]
+source_file="res://assets/Stressface/Mid.png"
+dest_files=["res://.godot/imported/Mid.png-81e9dd6499b5631573feb3e147f6390f.ctex"]
 
 [params]
 

@@ -1,9 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=12 format=3 uid="uid://2spsrl07jibm"]
 
-[ext_resource type="Texture2D" uid="uid://81k8cxv1u66" path="res://assets/Sol.png" id="1_ckyv7"]
+[ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
+[ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
+[ext_resource type="Texture2D" uid="uid://x4ml5vbpbghr" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
+[ext_resource type="Texture2D" uid="uid://8m6ywauev7or" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
+[ext_resource type="Texture2D" uid="uid://boybjfbofwill" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
+[ext_resource type="Texture2D" uid="uid://ddechvkto1lol" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3ugx"]
+size = Vector2(165, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr35x"]
+size = Vector2(1920, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci42r"]
+size = Vector2(1920, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxg41"]
+size = Vector2(1, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbu2q"]
+size = Vector2(1, 1080)
+
+[node name="Main" type="Node2D"]
 
 [node name="Sol" type="Sprite2D" parent="."]
-position = Vector2(512, 512)
+position = Vector2(960, 540)
 texture = ExtResource("1_ckyv7")
+
+[node name="Perso" type="CharacterBody2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("2_1ynkl")
+front_texture = ExtResource("3_srx8n")
+back_texture = ExtResource("4_v0bhv")
+left_texture = ExtResource("5_1nodn")
+right_texture = ExtResource("6_0vwmp")
+
+[node name="SpritePerso" type="Sprite2D" parent="Perso"]
+
+[node name="HitBoxPerso" type="CollisionShape2D" parent="Perso"]
+shape = SubResource("RectangleShape2D_i3ugx")
+
+[node name="MurHaut" type="StaticBody2D" parent="."]
+position = Vector2(960, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MurHaut"]
+visible = false
+shape = SubResource("RectangleShape2D_mr35x")
+
+[node name="MurBas" type="StaticBody2D" parent="."]
+position = Vector2(960, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MurBas"]
+visible = false
+shape = SubResource("RectangleShape2D_ci42r")
+
+[node name="MurGauche" type="StaticBody2D" parent="."]
+position = Vector2(2.08165e-12, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MurGauche"]
+visible = false
+shape = SubResource("RectangleShape2D_sxg41")
+
+[node name="MurDroite" type="StaticBody2D" parent="."]
+position = Vector2(1920, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MurDroite"]
+shape = SubResource("RectangleShape2D_bbu2q")

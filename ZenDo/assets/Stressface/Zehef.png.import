@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2km4avc6wg0u"
-path="res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"
+uid="uid://dy2rkynespibx"
+path="res://.godot/imported/Zehef.png-10a6b3c8144d62c7acb5dae549a5b487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sol.png"
-dest_files=["res://.godot/imported/Sol.png-fce3ca4ffaee650922f07aa170e79df4.ctex"]
+source_file="res://assets/Stressface/Zehef.png"
+dest_files=["res://.godot/imported/Zehef.png-10a6b3c8144d62c7acb5dae549a5b487.ctex"]
 
 [params]
 
