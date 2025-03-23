@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=65 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -16,7 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cl5jypnebjs5w" path="res://assets/Kitchen/Ampty-Friers.png" id="14_u025s"]
 [ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
 [ext_resource type="AudioStream" uid="uid://b3cnkqyu3ong8" path="res://assets/Audio/friteuse.mp3" id="16_ybl8t"]
+[ext_resource type="Script" path="res://scripts/Frigo.gd" id="17_6nvr5"]
 [ext_resource type="Texture2D" uid="uid://c21n818f81fho" path="res://assets/Image/bar_round_large.png" id="17_15cf5"]
+[ext_resource type="Script" path="res://scripts/Frigo_UI.gd" id="17_ga22n"]
 [ext_resource type="Texture2D" uid="uid://bvp6j2am11pxj" path="res://assets/Kitchen/Close-fridge.png" id="17_kfnyp"]
 [ext_resource type="Texture2D" uid="uid://cosjwhgya2w0h" path="res://assets/Image/red.png" id="18_2kn2e"]
 [ext_resource type="Script" path="res://scripts/Evier.gd" id="18_7o1am"]
@@ -29,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://r60vwgx6tyo8" path="res://assets/Table object/Dishes.png" id="23_2r0rh"]
 [ext_resource type="AudioStream" uid="uid://28rf7ymlh18l" path="res://assets/Audio/Bruits_thomas.mp3" id="24_bcwsf"]
 [ext_resource type="Texture2D" uid="uid://bwyjo6mtucvx" path="res://assets/Table object/Plateau.png" id="24_umroj"]
+[ext_resource type="Script" path="res://scripts/Inventaire.gd" id="31_n6jqh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
 radius = 65.0
@@ -396,9 +399,37 @@ shape = SubResource("CapsuleShape2D_3cxoy")
 stream = ExtResource("16_ybl8t")
 volume_db = 3.731
 
+[node name="Frigo_UI" type="Control" parent="Kitchen"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_ga22n")
+
+[node name="Panel" type="Panel" parent="Kitchen/Frigo_UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Kitchen/Frigo_UI/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SteakButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="FritesButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SodaButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
+layout_mode = 2
+
 [node name="Frigo" type="StaticBody2D" parent="Kitchen"]
 position = Vector2(574, 1005)
 rotation = 1.5708
+script = ExtResource("17_6nvr5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Frigo"]
 shape = SubResource("RectangleShape2D_px5sk")
@@ -439,10 +470,10 @@ stream = ExtResource("21_5h41m")
 
 [node name="StressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-offset_left = 1543.0
-offset_top = 34.0
-offset_right = 1897.0
-offset_bottom = 95.0
+offset_left = 1539.0
+offset_top = 30.0
+offset_right = 1893.0
+offset_bottom = 91.0
 nine_patch_stretch = true
 stretch_margin_left = 10
 stretch_margin_top = 10
@@ -490,7 +521,37 @@ texture = ExtResource("24_umroj")
 position = Vector2(70, 801)
 texture = ExtResource("23_2r0rh")
 
+[node name="Inventaire" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1597.0
+offset_top = 110.0
+offset_right = 1825.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("31_n6jqh")
+
+[node name="Panel" type="Panel" parent="Inventaire"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Liste d\'objets" type="VBoxContainer" parent="Inventaire/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MessageLabel" type="Label" parent="Inventaire/Panel/Liste d\'objets"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
 [connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
+[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/SteakButton" to="Kitchen/Frigo_UI" method="_on_steak_selected"]
+[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/FritesButton" to="Kitchen/Frigo_UI" method="_on_frites_selected"]
+[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/SodaButton" to="Kitchen/Frigo_UI" method="_on_soda_selected"]
 [connection signal="timeout" from="Kitchen/Cuisson/Timer" to="Kitchen/Cuisson" method="_on_timer_timeout"]
 [connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_Timer_timeout"]

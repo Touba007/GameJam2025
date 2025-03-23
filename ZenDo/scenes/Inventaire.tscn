@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyme66e28bi2d"]
+
+[sub_resource type="GDScript" id="GDScript_6l6sv"]
+script/source = "extends Control
+
+@onready var liste_objets = $Panel/ListeObjets
+@onready var message_label = $Panel/ListeObjets/MessageLabel
+
+func afficher_inventaire(donnees: Dictionary):
+	# Nettoie les anciens éléments sauf le message_label
+	for enfant in liste_objets.get_children():
+		if enfant != message_label:
+			enfant.queue_free()
+
+	if donnees.is_empty():
+		message_label.text = \"Pas d'objets dans l'inventaire\"
+		message_label.visible = true
+	else:
+		message_label.visible = false
+		for nom in donnees.keys():
+			var quantite = donnees[nom]
+			var item_label = Label.new()
+			item_label.text = \"- \" + nom + \" x\" + str(quantite)
+			liste_objets.add_child(item_label)
+"
+
+[node name="Inventaire" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_6l6sv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Liste d\'Objets" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Message" type="Label" parent="Panel/Liste d\'Objets"]
+layout_mode = 2

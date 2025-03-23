@@ -2,7 +2,7 @@ extends TextureProgressBar
 
 @export var max_stress: float = 100.0
 var stress: float = 0.0
-@export var stress_speed: float = 10.0  # stress par seconde
+@export var stress_speed: float = 2.0  # stress par seconde
 
 func _ready():
 	min_value = 0
