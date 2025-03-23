@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=57 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://c7eq2knd76mlb" path="res://assets/Toilet/Toilet.png" id="22_3eh1q"]
 [ext_resource type="Script" path="res://scripts/Toilettes.gd" id="22_x10ff"]
 [ext_resource type="Texture2D" uid="uid://r60vwgx6tyo8" path="res://assets/Table object/Dishes.png" id="23_2r0rh"]
+[ext_resource type="AudioStream" uid="uid://28rf7ymlh18l" path="res://assets/Audio/Bruits_thomas.mp3" id="24_bcwsf"]
 [ext_resource type="Texture2D" uid="uid://bwyjo6mtucvx" path="res://assets/Table object/Plateau.png" id="24_umroj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
@@ -437,6 +438,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qc0i7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Toilettes"]
+stream = ExtResource("24_bcwsf")
+volume_db = 4.664
 
 [node name="Timer" type="Timer" parent="Toilettes"]
 
@@ -456,4 +459,4 @@ texture = ExtResource("24_umroj")
 
 [connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
-[connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_timer_timeout"]
+[connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_Timer_timeout"]
