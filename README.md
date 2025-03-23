@@ -1,6 +1,6 @@
 # GameJam2025
 Zendo
-Plongez dans l'univers frénétique de la restauration rapide avec Zendo ! Votre mission : cuire les frites, griller les steaks et remplir les boissons pour accomplir les quêtes disponibles dans votre inventaire, tout en gardant votre calme face au stress des retards et au bruit des clients.
+Plongez dans l'univers frénétique de la restauration rapide avec Zendo ! Votre mission : cuire les frites et remplir les boissons pour accomplir les quêtes disponibles dans votre inventaire, tout en gardant votre calme face au stress des retards et au bruit des clients.
 
 Comment Jouer
 Déplacement : Utilisez les flèches directionnelles pour vous déplacer dans la cuisine.
