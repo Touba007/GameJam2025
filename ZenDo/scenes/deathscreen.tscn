@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtx1s7wos42wl"]
 
-[ext_resource type="Script" uid="uid://dtgqmifmtwkm8" path="res://scripts/deathscreen.gd" id="1_uurjc"]
+[ext_resource type="Script" path="res://scripts/deathscreen.gd" id="1_uurjc"]
 [ext_resource type="Texture2D" uid="uid://k0o271cywp7g" path="res://assets/deathscreen (1).png" id="1_ylnw1"]
 [ext_resource type="Texture2D" uid="uid://5iuauys8n35v" path="res://assets/Game.png" id="2_a17rc"]
 [ext_resource type="FontFile" uid="uid://bdw5hbxpkyr8y" path="res://assets/Fonts/Fontsr/suez-one-latin-ext-400-normal.ttf" id="4_ke8wd"]

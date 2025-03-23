@@ -8,12 +8,12 @@ var quete_active := ""
 @onready var message_label = $Panel/"Liste d'objets"/MessageLabel
 
 func _ready():
-	visible = false
+	visible = true
 	generer_nouvelle_quete()
 
 func _input(event):
 	if event.is_action_pressed("toggle_inventory"):
-		visible = not visible
+		visible = true
 		if visible:
 			afficher_inventaire()
 			
