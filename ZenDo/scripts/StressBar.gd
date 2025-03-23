@@ -2,7 +2,7 @@ extends TextureProgressBar
 
 @export var max_stress: float = 100.0
 var stress: float = 0.0
-@export var stress_speed: float = 2.0  # stress par seconde
+@export var stress_speed: float = 1.0  # stress par seconde
 
 func _ready():
 	min_value = 0
@@ -17,5 +17,13 @@ func _process(delta):
 	# Si stress max atteint, déclenche game over
 	if stress >= max_stress:
 		get_tree().change_scene_to_file("res://scenes/deathscreen.tscn")
+		
+		
+func reduce_stress(amount : float) :
+	stress -= amount
+	if stress < 0:
+		stress = 0
+	value = stress
+	
 
 

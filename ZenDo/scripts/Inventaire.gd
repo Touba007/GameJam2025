@@ -2,18 +2,30 @@ extends Control
 
 # Le vrai inventaire (objet → quantité)
 var inventaire: Dictionary = {}
+var quete_active := ""
 
 @onready var liste_objets = $Panel/"Liste d'objets"
 @onready var message_label = $Panel/"Liste d'objets"/MessageLabel
 
 func _ready():
 	visible = false
+	generer_nouvelle_quete()
 
 func _input(event):
 	if event.is_action_pressed("toggle_inventory"):
 		visible = not visible
 		if visible:
 			afficher_inventaire()
+			
+func generer_nouvelle_quete():
+	var quetes = [
+		"Préparer une frite",
+		#"Préparer un burger",
+		"Donner une boisson"
+		]
+	quete_active = quetes[randi() % quetes.size()]
+	afficher_inventaire()
+
 
 # Ajouter un objet
 func ajouter_objet(nom: String, quantite: int = 1):
@@ -49,3 +61,9 @@ func afficher_inventaire():
 			var label = Label.new()
 			label.text = "- " + nom + " x" + str(quantite)
 			liste_objets.add_child(label)
+	var sep = Label.new()
+	sep.text = "---"
+	liste_objets.add_child(sep)
+	var quete_label = Label.new()
+	quete_label.text = "Quête active : " + quete_active
+	liste_objets.add_child(quete_label)

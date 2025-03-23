@@ -40,7 +40,11 @@ func _process(delta):
 			else:
 				afficher_message("Pas de frites dans l'inventaire")
 		elif prete:
-			inventory.ajouter_objet("Frites Cuites")
+			if inventory.quete_active == "Préparer une frite":
+				inventory.get_parent().get_node("StressBar").reduce_stress(25)
+				inventory.generer_nouvelle_quete()
+			else : 
+				inventory.ajouter_objet("Frites Cuites")
 			vider_friteuse()
 			
 			
