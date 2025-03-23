@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=67 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://28rf7ymlh18l" path="res://assets/Audio/Bruits_thomas.mp3" id="24_bcwsf"]
 [ext_resource type="Texture2D" uid="uid://bwyjo6mtucvx" path="res://assets/Table object/Plateau.png" id="24_umroj"]
 [ext_resource type="Script" path="res://scripts/Inventaire.gd" id="31_n6jqh"]
+[ext_resource type="Script" path="res://scripts/Cuisson.gd" id="33_m017m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
 radius = 65.0
@@ -133,6 +134,10 @@ size = Vector2(204, 20)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qc0i7"]
 radius = 61.38
 height = 255.84
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qrg1"]
+radius = 203.975
+height = 407.95
 
 [node name="Main" type="Node2D"]
 
@@ -569,6 +574,23 @@ offset_bottom = 40.0
 [node name="MessageLabel" type="Label" parent="Inventaire/Panel/Liste d\'objets"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("33_m017m")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+position = Vector2(2.08165e-12, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(85, 27)
+shape = SubResource("CapsuleShape2D_8qrg1")
+
+[node name="Timer" type="Timer" parent="Node2D"]
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_top = 500.0
+offset_right = 40.0
+offset_bottom = 523.0
 
 [connection signal="timeout" from="Friteuses/Timer" to="Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Friteuses2/Timer" to="Friteuses2" method="_on_timer_timeout"]

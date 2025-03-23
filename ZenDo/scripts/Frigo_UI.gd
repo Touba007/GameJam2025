@@ -6,7 +6,7 @@ func _on_frites_selected():
 	visible = false
 
 func _on_steak_selected():
-	get_parent().get_node("Inventaire").ajouter_objet("Viande")
+	get_parent().get_node("Inventaire").ajouter_objet("Steak")
 	visible = false
 
 func _on_soda_selected():
