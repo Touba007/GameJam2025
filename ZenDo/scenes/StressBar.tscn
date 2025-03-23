@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cklsxyswsthd0"]
+[gd_scene load_steps=4 format=3 uid="uid://cn0l2ubmbbdpv"]
 
 [ext_resource type="Texture2D" uid="uid://c21n818f81fho" path="res://assets/Image/bar_round_large.png" id="1_f1o00"]
 [ext_resource type="Texture2D" uid="uid://cosjwhgya2w0h" path="res://assets/Image/red.png" id="2_br6xs"]
-[ext_resource type="Script" uid="uid://n6d6qrbvn8t8" path="res://scripts/texture_progress_bar.gd" id="3_x5orw"]
+[ext_resource type="Script" path="res://scripts/texture_progress_bar.gd" id="3_x5orw"]
 
 [node name="Control" type="Control"]
 texture_filter = 3

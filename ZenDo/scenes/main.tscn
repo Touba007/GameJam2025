@@ -1,16 +1,20 @@
-[gd_scene load_steps=37 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=45 format=3 uid="uid://2spsrl07jibm"]
 
-[ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
-[ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
-[ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
-[ext_resource type="Texture2D" uid="uid://bm6k72tmjbyca" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
-[ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
-[ext_resource type="Texture2D" uid="uid://d00nldyeheey6" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
-[ext_resource type="Texture2D" uid="uid://du8x7k3ni36qi" path="res://assets/Chaise/Chair-face.png" id="7_wuy5p"]
-[ext_resource type="Texture2D" uid="uid://ghye515nhg7v" path="res://assets/Chaise/Chair-back.png" id="8_f2k2g"]
-[ext_resource type="Texture2D" uid="uid://cmwo1muuowm0m" path="res://assets/Table/small-table.png" id="9_4bhek"]
-[ext_resource type="Texture2D" uid="uid://bvc6tmrhv234v" path="res://assets/Chaise/banquette.png" id="9_wp6us"]
-[ext_resource type="Texture2D" uid="uid://u84ltgiupror" path="res://assets/Table/Table.png" id="11_iw4b1"]
+[ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
+[ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
+[ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_sc6fd"]
+[ext_resource type="Texture2D" uid="uid://bm6k72tmjbyca" path="res://assets/Perso/Perso-back.png" id="4_eflbg"]
+[ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_dfgbr"]
+[ext_resource type="Texture2D" uid="uid://d00nldyeheey6" path="res://assets/Perso/Perso-right.png" id="6_gww83"]
+[ext_resource type="Texture2D" uid="uid://du8x7k3ni36qi" path="res://assets/Chaise/Chair-face.png" id="7_uofau"]
+[ext_resource type="Texture2D" uid="uid://ghye515nhg7v" path="res://assets/Chaise/Chair-back.png" id="8_sqmns"]
+[ext_resource type="Texture2D" uid="uid://bvc6tmrhv234v" path="res://assets/Chaise/banquette.png" id="9_xwpq1"]
+[ext_resource type="Texture2D" uid="uid://cmwo1muuowm0m" path="res://assets/Table/small-table.png" id="10_lpehk"]
+[ext_resource type="Texture2D" uid="uid://u84ltgiupror" path="res://assets/Table/Table.png" id="11_6fm27"]
+[ext_resource type="Texture2D" uid="uid://dq3hgh3mchl0u" path="res://assets/Table/Bar.png" id="12_pib57"]
+[ext_resource type="Script" path="res://scripts/Friteuses.gd" id="13_daivy"]
+[ext_resource type="Texture2D" uid="uid://cl5jypnebjs5w" path="res://assets/Kitchen/Ampty-Friers.png" id="14_u025s"]
+[ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
 radius = 65.0
@@ -87,21 +91,36 @@ size = Vector2(95, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3e8u"]
 size = Vector2(95, 76)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mylor"]
+size = Vector2(138, 743)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3wdw"]
+size = Vector2(185, 202)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ag13"]
+radius = 104.73
+height = 430.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cxoy"]
+radius = 122.71
+height = 431.17
+
 [node name="Main" type="Node2D"]
 
 [node name="Sol" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("1_ckyv7")
+texture = ExtResource("1_0rse2")
 
 [node name="Perso" type="CharacterBody2D" parent="."]
 position = Vector2(960, 540)
-script = ExtResource("2_1ynkl")
-front_texture = ExtResource("3_srx8n")
-back_texture = ExtResource("4_v0bhv")
-left_texture = ExtResource("5_1nodn")
-right_texture = ExtResource("6_0vwmp")
+script = ExtResource("2_cyy84")
+front_texture = ExtResource("3_sc6fd")
+back_texture = ExtResource("4_eflbg")
+left_texture = ExtResource("5_dfgbr")
+right_texture = ExtResource("6_gww83")
 
 [node name="SpritePerso" type="Sprite2D" parent="Perso"]
+texture = ExtResource("5_dfgbr")
 
 [node name="HitBoxPerso" type="CollisionShape2D" parent="Perso"]
 position = Vector2(-1, 0)
@@ -145,7 +164,7 @@ position = Vector2(1800, 100)
 shape = SubResource("RectangleShape2D_bwp4l")
 
 [node name="FrontChaise" type="Sprite2D" parent="Chaises/FC1"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="FC2" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1480, 100)
@@ -154,7 +173,7 @@ position = Vector2(1480, 100)
 shape = SubResource("RectangleShape2D_8jptx")
 
 [node name="FrontChaise" type="Sprite2D" parent="Chaises/FC2"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="FC3" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1150, 100)
@@ -163,7 +182,7 @@ position = Vector2(1150, 100)
 shape = SubResource("RectangleShape2D_7lhhg")
 
 [node name="FrontChaise" type="Sprite2D" parent="Chaises/FC3"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="BC1" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1801, 284)
@@ -172,7 +191,7 @@ position = Vector2(1801, 284)
 shape = SubResource("RectangleShape2D_iapp7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/BC1"]
-texture = ExtResource("8_f2k2g")
+texture = ExtResource("8_sqmns")
 
 [node name="BC2" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1481, 283)
@@ -181,7 +200,7 @@ position = Vector2(1481, 283)
 shape = SubResource("RectangleShape2D_0h7jx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/BC2"]
-texture = ExtResource("8_f2k2g")
+texture = ExtResource("8_sqmns")
 
 [node name="BC3" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1151, 282)
@@ -190,7 +209,7 @@ position = Vector2(1151, 282)
 shape = SubResource("RectangleShape2D_224sv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/BC3"]
-texture = ExtResource("8_f2k2g")
+texture = ExtResource("8_sqmns")
 
 [node name="Banquette" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1729, 1028)
@@ -199,7 +218,7 @@ position = Vector2(1729, 1028)
 shape = SubResource("RectangleShape2D_m5scc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/Banquette"]
-texture = ExtResource("9_wp6us")
+texture = ExtResource("9_xwpq1")
 
 [node name="FC4" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1828, 766)
@@ -208,7 +227,7 @@ position = Vector2(1828, 766)
 shape = SubResource("RectangleShape2D_dvmo3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/FC4"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="FC5" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1633, 766)
@@ -217,7 +236,7 @@ position = Vector2(1633, 766)
 shape = SubResource("RectangleShape2D_aatua")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/FC5"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="FC6" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1315, 806)
@@ -226,7 +245,7 @@ position = Vector2(1315, 806)
 shape = SubResource("RectangleShape2D_ko11f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/FC6"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="FC7" type="StaticBody2D" parent="Chaises"]
 position = Vector2(993, 806)
@@ -235,7 +254,7 @@ position = Vector2(993, 806)
 shape = SubResource("RectangleShape2D_sckmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/FC7"]
-texture = ExtResource("7_wuy5p")
+texture = ExtResource("7_uofau")
 
 [node name="BC4" type="StaticBody2D" parent="Chaises"]
 position = Vector2(1313, 1004)
@@ -244,7 +263,7 @@ position = Vector2(1313, 1004)
 shape = SubResource("RectangleShape2D_hapfy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/BC4"]
-texture = ExtResource("8_f2k2g")
+texture = ExtResource("8_sqmns")
 
 [node name="BC5" type="StaticBody2D" parent="Chaises"]
 position = Vector2(993, 1004)
@@ -253,7 +272,7 @@ position = Vector2(993, 1004)
 shape = SubResource("RectangleShape2D_67384")
 
 [node name="Sprite2D" type="Sprite2D" parent="Chaises/BC5"]
-texture = ExtResource("8_f2k2g")
+texture = ExtResource("8_sqmns")
 
 [node name="Tables" type="Node2D" parent="."]
 
@@ -264,7 +283,7 @@ position = Vector2(1801, 195)
 shape = SubResource("RectangleShape2D_m8mks")
 
 [node name="SmallTable" type="Sprite2D" parent="Tables/ST1"]
-texture = ExtResource("9_4bhek")
+texture = ExtResource("10_lpehk")
 
 [node name="ST2" type="StaticBody2D" parent="Tables"]
 position = Vector2(1482, 193)
@@ -273,7 +292,7 @@ position = Vector2(1482, 193)
 shape = SubResource("RectangleShape2D_cyrev")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tables/ST2"]
-texture = ExtResource("9_4bhek")
+texture = ExtResource("10_lpehk")
 
 [node name="ST3" type="StaticBody2D" parent="Tables"]
 position = Vector2(1151, 192)
@@ -282,25 +301,25 @@ position = Vector2(1151, 192)
 shape = SubResource("RectangleShape2D_detwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tables/ST3"]
-texture = ExtResource("9_4bhek")
+texture = ExtResource("10_lpehk")
 
-[node name="BG1" type="StaticBody2D" parent="Tables"]
+[node name="BT1" type="StaticBody2D" parent="Tables"]
 position = Vector2(1830, 886)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/BG1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/BT1"]
 shape = SubResource("RectangleShape2D_cjk1g")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tables/BG1"]
-texture = ExtResource("11_iw4b1")
+[node name="Sprite2D" type="Sprite2D" parent="Tables/BT1"]
+texture = ExtResource("11_6fm27")
 
-[node name="BG2" type="StaticBody2D" parent="Tables"]
+[node name="BT2" type="StaticBody2D" parent="Tables"]
 position = Vector2(1636, 886)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/BG2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tables/BT2"]
 shape = SubResource("RectangleShape2D_v3te5")
 
-[node name="Sprite2D" type="Sprite2D" parent="Tables/BG2"]
-texture = ExtResource("11_iw4b1")
+[node name="Sprite2D" type="Sprite2D" parent="Tables/BT2"]
+texture = ExtResource("11_6fm27")
 
 [node name="ST4" type="StaticBody2D" parent="Tables"]
 position = Vector2(1314, 911)
@@ -309,7 +328,7 @@ position = Vector2(1314, 911)
 shape = SubResource("RectangleShape2D_ktlsk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tables/ST4"]
-texture = ExtResource("9_4bhek")
+texture = ExtResource("10_lpehk")
 
 [node name="ST5" type="StaticBody2D" parent="Tables"]
 position = Vector2(994, 907)
@@ -318,4 +337,65 @@ position = Vector2(994, 907)
 shape = SubResource("RectangleShape2D_r3e8u")
 
 [node name="Sprite2D" type="Sprite2D" parent="Tables/ST5"]
-texture = ExtResource("9_4bhek")
+texture = ExtResource("10_lpehk")
+
+[node name="Kitchen" type="Node2D" parent="."]
+
+[node name="Bar" type="StaticBody2D" parent="Kitchen"]
+position = Vector2(715, 709)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Bar"]
+shape = SubResource("RectangleShape2D_mylor")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Bar"]
+texture = ExtResource("12_pib57")
+
+[node name="Friteuses" type="StaticBody2D" parent="Kitchen"]
+position = Vector2(92, 101)
+script = ExtResource("13_daivy")
+texture_vide = ExtResource("14_u025s")
+texture_pleine = ExtResource("15_adlen")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Friteuses"]
+texture = ExtResource("14_u025s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses"]
+shape = SubResource("RectangleShape2D_d3wdw")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Friteuses"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses/Area2D"]
+shape = SubResource("CapsuleShape2D_0ag13")
+
+[node name="Label" type="Label" parent="Kitchen/Friteuses"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="Kitchen/Friteuses"]
+
+[node name="Friteuses2" type="StaticBody2D" parent="Kitchen"]
+position = Vector2(277, 101)
+script = ExtResource("13_daivy")
+texture_vide = ExtResource("14_u025s")
+texture_pleine = ExtResource("15_adlen")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Friteuses2"]
+texture = ExtResource("14_u025s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses2"]
+shape = SubResource("RectangleShape2D_d3wdw")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Friteuses2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses2/Area2D"]
+position = Vector2(31, 0)
+shape = SubResource("CapsuleShape2D_3cxoy")
+
+[node name="Label" type="Label" parent="Kitchen/Friteuses2"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="Kitchen/Friteuses2"]
+
+[connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
+[connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
