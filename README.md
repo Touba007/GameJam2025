@@ -5,5 +5,6 @@ Plongez dans l'univers frénétique de la restauration rapide avec Zendo ! Votre
 Comment Jouer
 Déplacement : Utilisez les flèches directionnelles pour vous déplacer dans la cuisine.
 Interaction : Appuyez sur E pour interagir avec les objets et préparer les plats.
+Frigo : Utilisez la souris pour sélectionner les frites ou les boissons.
 Inventaire : Ouvrez l'inventaire avec T pour consulter les quêtes disponibles et suivre votre progression.
 Gestion du stress : Restez calme et organisez vos tâches pour éviter le stress lié aux retards et au bruit des clients

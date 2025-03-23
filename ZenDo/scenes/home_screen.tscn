@@ -1,21 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://1vwfxj4317iq"]
 
-[ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_idnvu"]
+[ext_resource type="Script" uid="uid://btnbasesbdy35" path="res://scripts/home_screen.gd" id="1_idnvu"]
 [ext_resource type="Texture2D" uid="uid://5iuauys8n35v" path="res://assets/Game.png" id="1_kbhme"]
 [ext_resource type="Texture2D" uid="uid://cpbm88ct03cr5" path="res://assets/mainfilter.png" id="3_bie51"]
 [ext_resource type="Texture2D" uid="uid://bwudgk7n42ked" path="res://assets/Complete_UI_Essential_Pack_Free/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/UI_Flat_FrameSlot01b.png" id="4_ih2x6"]
-
-[sub_resource type="SystemFont" id="SystemFont_bie51"]
-font_names = PackedStringArray("Suez One")
-
-[sub_resource type="SystemFont" id="SystemFont_ked1l"]
-font_names = PackedStringArray("Krona One")
-
-[sub_resource type="SystemFont" id="SystemFont_b02wa"]
-font_names = PackedStringArray("Krona One")
-
-[sub_resource type="SystemFont" id="SystemFont_ih2x6"]
-font_names = PackedStringArray("Spartical Graffiti PERSONAL USE")
+[ext_resource type="FontFile" uid="uid://7v10orbdnyd8" path="res://assets/Fonts/Fontsr/suez-one-hebrew-400-normal.ttf" id="5_15ihl"]
+[ext_resource type="FontFile" uid="uid://c3uvdvl8itsl2" path="res://assets/Fonts/Fontsr/krona-one-latin-400-normal.ttf" id="6_airqx"]
+[ext_resource type="FontFile" uid="uid://3mg7kyubnaca" path="res://assets/Fonts/Fontsr/krona-one-latin-ext-400-normal.ttf" id="7_ii2s2"]
+[ext_resource type="FontFile" uid="uid://b81h750lvgkme" path="res://assets/Fonts/Fontsr/SparticalGraffiti_PERSONAL_USE_ONLY.otf" id="8_f8xo1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -45,7 +37,7 @@ offset_right = 1583.0
 offset_bottom = 879.0
 texture = ExtResource("4_ih2x6")
 
-[node name="Label" type="Label" parent="."]
+[node name="endo" type="Label" parent="."]
 texture_filter = 3
 layout_mode = 0
 offset_left = 776.0
@@ -53,7 +45,7 @@ offset_top = 264.0
 offset_right = 1372.0
 offset_bottom = 599.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_bie51")
+theme_override_fonts/font = ExtResource("5_15ihl")
 theme_override_font_sizes/font_size = 256
 text = "endo"
 
@@ -69,9 +61,9 @@ alignment = 1
 texture_filter = 3
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.890196, 0.905882, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_ked1l")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_airqx")
 theme_override_font_sizes/font_size = 32
 text = "Commencer"
 flat = true
@@ -79,22 +71,22 @@ flat = true
 [node name="QuitterButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0.0941176, 1)
-theme_override_fonts/font = SubResource("SystemFont_b02wa")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_ii2s2")
 theme_override_font_sizes/font_size = 24
 action_mode = 0
 text = "Quitter"
 flat = true
 
-[node name="Label2" type="Label" parent="."]
+[node name="Z" type="Label" parent="."]
 layout_mode = 0
 offset_left = 584.0
 offset_top = 280.0
 offset_right = 795.0
 offset_bottom = 680.0
 theme_override_colors/font_color = Color(0.847059, 0, 0.0235294, 1)
-theme_override_fonts/font = SubResource("SystemFont_ih2x6")
+theme_override_fonts/font = ExtResource("8_f8xo1")
 theme_override_font_sizes/font_size = 444
 text = "Z"
 
