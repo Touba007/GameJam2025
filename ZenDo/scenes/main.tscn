@@ -99,6 +99,13 @@ size = Vector2(95, 76)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3e8u"]
 size = Vector2(95, 76)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px5sk"]
+size = Vector2(151, 153)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owct6"]
+radius = 181.46
+height = 534.38
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mylor"]
 size = Vector2(138, 743)
 
@@ -112,13 +119,6 @@ height = 430.5
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cxoy"]
 radius = 122.71
 height = 431.17
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_px5sk"]
-size = Vector2(151, 153)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owct6"]
-radius = 181.46
-height = 534.38
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s8bl"]
 size = Vector2(138, 743)
@@ -341,6 +341,24 @@ shape = SubResource("RectangleShape2D_r3e8u")
 [node name="Sprite2D" type="Sprite2D" parent="Tables/ST5"]
 texture = ExtResource("10_lpehk")
 
+[node name="Frigo" type="StaticBody2D" parent="."]
+position = Vector2(574, 1005)
+rotation = 1.5708
+script = ExtResource("17_6nvr5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frigo"]
+shape = SubResource("RectangleShape2D_px5sk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Frigo"]
+texture = ExtResource("17_kfnyp")
+
+[node name="Area2D" type="Area2D" parent="Frigo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frigo/Area2D"]
+position = Vector2(94, -12.0003)
+rotation = 1.54811
+shape = SubResource("CapsuleShape2D_owct6")
+
 [node name="Kitchen" type="Node2D" parent="."]
 
 [node name="Bar" type="StaticBody2D" parent="Kitchen"]
@@ -399,51 +417,6 @@ shape = SubResource("CapsuleShape2D_3cxoy")
 stream = ExtResource("16_ybl8t")
 volume_db = 3.731
 
-[node name="Frigo_UI" type="Control" parent="Kitchen"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_ga22n")
-
-[node name="Panel" type="Panel" parent="Kitchen/Frigo_UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Kitchen/Frigo_UI/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SteakButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="FritesButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="SodaButton" type="Button" parent="Kitchen/Frigo_UI/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="Frigo" type="StaticBody2D" parent="Kitchen"]
-position = Vector2(574, 1005)
-rotation = 1.5708
-script = ExtResource("17_6nvr5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Frigo"]
-shape = SubResource("RectangleShape2D_px5sk")
-
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Frigo"]
-texture = ExtResource("17_kfnyp")
-
-[node name="Area2D" type="Area2D" parent="Kitchen/Frigo"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Frigo/Area2D"]
-position = Vector2(94, -12.0003)
-rotation = 1.54811
-shape = SubResource("CapsuleShape2D_owct6")
-
 [node name="Cuisson" type="StaticBody2D" parent="Kitchen"]
 position = Vector2(69, 709)
 script = ExtResource("18_7o1am")
@@ -482,6 +455,47 @@ stretch_margin_bottom = 10
 texture_under = ExtResource("17_15cf5")
 texture_progress = ExtResource("18_2kn2e")
 script = ExtResource("19_v4pcy")
+
+[node name="Frigo_UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 545.0
+offset_top = 419.0
+offset_right = 1376.0
+offset_bottom = 577.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_ga22n")
+
+[node name="Panel" type="Panel" parent="Frigo_UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Frigo_UI/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SteakButton" type="Button" parent="Frigo_UI/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Prendre 1 Steak ! "
+
+[node name="FritesButton" type="Button" parent="Frigo_UI/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Prendre un schet de frite !"
+
+[node name="SodaButton" type="Button" parent="Frigo_UI/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Prendre un soda !"
 
 [node name="Toilettes" type="StaticBody2D" parent="."]
 position = Vector2(913, 47)
@@ -550,8 +564,8 @@ layout_mode = 2
 
 [connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
-[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/SteakButton" to="Kitchen/Frigo_UI" method="_on_steak_selected"]
-[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/FritesButton" to="Kitchen/Frigo_UI" method="_on_frites_selected"]
-[connection signal="pressed" from="Kitchen/Frigo_UI/Panel/VBoxContainer/SodaButton" to="Kitchen/Frigo_UI" method="_on_soda_selected"]
 [connection signal="timeout" from="Kitchen/Cuisson/Timer" to="Kitchen/Cuisson" method="_on_timer_timeout"]
+[connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/SteakButton" to="Frigo_UI" method="_on_steak_selected"]
+[connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/FritesButton" to="Frigo_UI" method="_on_frites_selected"]
+[connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/SodaButton" to="Frigo_UI" method="_on_soda_selected"]
 [connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_Timer_timeout"]

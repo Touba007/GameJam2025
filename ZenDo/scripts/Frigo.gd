@@ -1,8 +1,8 @@
-extends StaticBody2D  
+extends Node2D
 
 var joueur_dans_zone = false
 
-@onready var fridge_ui = get_parent().get_node("FridgeUI")
+@onready var fridge_ui = get_parent().get_node("Frigo_UI")
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
@@ -11,12 +11,15 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Perso":
 		joueur_dans_zone = true
+		print("Joueur entre dans le frigo")
 
 func _on_body_exited(body):
 	if body.name == "Perso":
 		joueur_dans_zone = false
+		print("Joueur sort du frigo")
 
 func _process(delta):
 	if joueur_dans_zone and Input.is_action_just_pressed("interact"):
+		print("Interaction frigo")
 		if fridge_ui:
 			fridge_ui.visible = true
