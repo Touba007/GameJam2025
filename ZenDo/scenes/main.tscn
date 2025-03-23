@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bvc6tmrhv234v" path="res://assets/Chaise/banquette.png" id="9_xwpq1"]
 [ext_resource type="Texture2D" uid="uid://cmwo1muuowm0m" path="res://assets/Table/small-table.png" id="10_lpehk"]
 [ext_resource type="Texture2D" uid="uid://u84ltgiupror" path="res://assets/Table/Table.png" id="11_6fm27"]
-[ext_resource type="Texture2D" uid="uid://dq3hgh3mchl0u" path="res://assets/Table/Bar.png" id="12_pib57"]
+[ext_resource type="Texture2D" uid="uid://beieitfiydbk0" path="res://assets/Table/Bar.png" id="12_pib57"]
 [ext_resource type="Script" path="res://scripts/Friteuses.gd" id="13_daivy"]
 [ext_resource type="Texture2D" uid="uid://cl5jypnebjs5w" path="res://assets/Kitchen/Ampty-Friers.png" id="14_u025s"]
 [ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
