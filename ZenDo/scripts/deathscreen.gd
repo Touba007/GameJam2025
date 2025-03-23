@@ -1,11 +1,11 @@
-extends CanvasLayer
+extends Control
 
-# Fonction pour le bouton "Recommencer"
-func _on_RetryButton_pressed():
-	# Recharge la scène actuelle
-	get_tree().reload_current_scene()
+func _ready():
+	$VBoxContainer/CommencerButton.pressed.connect(_on_commencer_pressed)
+	$VBoxContainer/QuitterButton.pressed.connect(_on_quitter_pressed)
 
-# Fonction pour le bouton "Quitter"
-func _on_QuitButton_pressed():
-	# Quitte le jeu
+func _on_commencer_pressed():
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+func _on_quitter_pressed():
 	get_tree().quit()

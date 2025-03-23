@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://1vwfxj4317iq"]
+
+[ext_resource type="Script" path="res://scripts/home_screen.gd" id="1_idnvu"]
+[ext_resource type="Texture2D" uid="uid://5iuauys8n35v" path="res://assets/Game.png" id="1_kbhme"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_idnvu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kbhme")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 475.0
+offset_right = 1449.0
+offset_bottom = 679.0
+alignment = 1
+
+[node name="CommencerButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Commencer"
+
+[node name="QuitterButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+action_mode = 0
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/CommencerButton" to="." method="_on_commencer_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitterButton" to="." method="_on_quitter_pressed"]

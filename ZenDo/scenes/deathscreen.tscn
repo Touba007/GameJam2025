@@ -1,54 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtx1s7wos42wl"]
+[gd_scene load_steps=2 format=3 uid="uid://dtx1s7wos42wl"]
 
 [ext_resource type="Script" path="res://scripts/deathscreen.gd" id="1_uurjc"]
-[ext_resource type="Texture2D" uid="uid://k0o271cywp7g" path="res://assets/deathscreen (1).png" id="1_ylnw1"]
 
-[sub_resource type="SystemFont" id="SystemFont_uurjc"]
-font_names = PackedStringArray("Suez One", "McLawsuit", "Speedee")
-
-[sub_resource type="SystemFont" id="SystemFont_eye5d"]
-font_names = PackedStringArray("Krona One", "Speedee", "McLawsuit")
-
-[sub_resource type="SystemFont" id="SystemFont_hgqth"]
-font_names = PackedStringArray("Krona One", "Speedee")
-
-[node name="Deathscreen" type="CanvasLayer"]
-script = ExtResource("1_uurjc")
-
-[node name="Background" type="TextureRect" parent="."]
-texture_filter = 3
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.999996, 1.02055)
-texture = ExtResource("1_ylnw1")
-
-[node name="BurnOut" type="Label" parent="."]
-offset_left = 616.0
-offset_top = 376.0
-offset_right = 1308.0
-offset_bottom = 544.0
-theme_override_fonts/font = SubResource("SystemFont_uurjc")
-theme_override_font_sizes/font_size = 128
-text = "BURN-OUT"
-
-[node name="RetryButton" type="Button" parent="."]
-offset_left = 632.0
-offset_top = 600.0
-offset_right = 1301.0
-offset_bottom = 689.0
-theme_override_fonts/font = SubResource("SystemFont_eye5d")
-theme_override_font_sizes/font_size = 64
-text = "RECOMMENCER"
-
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 792.0
-offset_top = 736.0
-offset_right = 1162.0
-offset_bottom = 825.0
-scale = Vector2(1, 0.998431)
-theme_override_fonts/font = SubResource("SystemFont_hgqth")
-theme_override_font_sizes/font_size = 64
-text = "QUITTER"
-
-[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+script = ExtResource("1_uurjc")
