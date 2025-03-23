@@ -359,87 +359,95 @@ position = Vector2(94, -12.0003)
 rotation = 1.54811
 shape = SubResource("CapsuleShape2D_owct6")
 
-[node name="Kitchen" type="Node2D" parent="."]
-
-[node name="Bar" type="StaticBody2D" parent="Kitchen"]
+[node name="Bar" type="StaticBody2D" parent="."]
 position = Vector2(715, 709)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Bar"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar"]
 shape = SubResource("RectangleShape2D_mylor")
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Bar"]
+[node name="Sprite2D" type="Sprite2D" parent="Bar"]
 texture = ExtResource("12_pib57")
 
-[node name="Friteuses" type="StaticBody2D" parent="Kitchen"]
+[node name="Friteuses" type="StaticBody2D" parent="."]
 position = Vector2(92, 101)
 script = ExtResource("13_daivy")
 texture_vide = ExtResource("14_u025s")
 texture_pleine = ExtResource("15_adlen")
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Friteuses"]
+[node name="Sprite2D" type="Sprite2D" parent="Friteuses"]
 texture = ExtResource("14_u025s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Friteuses"]
 shape = SubResource("RectangleShape2D_d3wdw")
 
-[node name="Area2D" type="Area2D" parent="Kitchen/Friteuses"]
+[node name="Area2D" type="Area2D" parent="Friteuses"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Friteuses/Area2D"]
 shape = SubResource("CapsuleShape2D_0ag13")
 
-[node name="Timer" type="Timer" parent="Kitchen/Friteuses"]
+[node name="Timer" type="Timer" parent="Friteuses"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Kitchen/Friteuses"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Friteuses"]
 stream = ExtResource("16_ybl8t")
 volume_db = 3.731
 
-[node name="Friteuses2" type="StaticBody2D" parent="Kitchen"]
+[node name="Label" type="Label" parent="Friteuses"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Friteuses2" type="StaticBody2D" parent="."]
 position = Vector2(277, 101)
 script = ExtResource("13_daivy")
 texture_vide = ExtResource("14_u025s")
 texture_pleine = ExtResource("15_adlen")
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Friteuses2"]
+[node name="Sprite2D" type="Sprite2D" parent="Friteuses2"]
 texture = ExtResource("14_u025s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Friteuses2"]
 shape = SubResource("RectangleShape2D_d3wdw")
 
-[node name="Area2D" type="Area2D" parent="Kitchen/Friteuses2"]
+[node name="Area2D" type="Area2D" parent="Friteuses2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Friteuses2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Friteuses2/Area2D"]
 position = Vector2(31, 0)
 shape = SubResource("CapsuleShape2D_3cxoy")
 
-[node name="Timer" type="Timer" parent="Kitchen/Friteuses2"]
+[node name="Timer" type="Timer" parent="Friteuses2"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Kitchen/Friteuses2"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Friteuses2"]
 stream = ExtResource("16_ybl8t")
 volume_db = 3.731
 
-[node name="Cuisson" type="StaticBody2D" parent="Kitchen"]
+[node name="Label" type="Label" parent="Friteuses2"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Cuisson" type="StaticBody2D" parent="."]
 position = Vector2(69, 709)
 script = ExtResource("18_7o1am")
 texture_vide = ExtResource("18_jau7c")
 texture_plein = ExtResource("20_a3m5t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cuisson"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuisson"]
 shape = SubResource("RectangleShape2D_5s8bl")
 
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Cuisson"]
+[node name="Sprite2D" type="Sprite2D" parent="Cuisson"]
 texture = ExtResource("18_jau7c")
 
-[node name="Area2D" type="Area2D" parent="Kitchen/Cuisson"]
+[node name="Area2D" type="Area2D" parent="Cuisson"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cuisson/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuisson/Area2D"]
 position = Vector2(-32, 339)
 shape = SubResource("CapsuleShape2D_2kgt3")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Kitchen/Cuisson"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cuisson"]
 position = Vector2(-69, -709)
 stream = ExtResource("21_5h41m")
 
-[node name="Timer" type="Timer" parent="Kitchen/Cuisson"]
+[node name="Timer" type="Timer" parent="Cuisson"]
+
+[node name="Kitchen" type="Node2D" parent="."]
 
 [node name="StressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
@@ -562,9 +570,9 @@ offset_bottom = 40.0
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
-[connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
-[connection signal="timeout" from="Kitchen/Cuisson/Timer" to="Kitchen/Cuisson" method="_on_timer_timeout"]
+[connection signal="timeout" from="Friteuses/Timer" to="Friteuses" method="_on_timer_timeout"]
+[connection signal="timeout" from="Friteuses2/Timer" to="Friteuses2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Cuisson/Timer" to="Cuisson" method="_on_timer_timeout"]
 [connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/SteakButton" to="Frigo_UI" method="_on_steak_selected"]
 [connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/FritesButton" to="Frigo_UI" method="_on_frites_selected"]
 [connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/SodaButton" to="Frigo_UI" method="_on_soda_selected"]
