@@ -1,8 +1,8 @@
-extends StaticBody2D  
+extends Node2D
 
 var joueur_dans_zone = false
 
-@onready var fridge_ui = get_parent().get_node("FridgeUI")
+@onready var fridge_ui = get_parent().get_node("Frigo_UI")
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
