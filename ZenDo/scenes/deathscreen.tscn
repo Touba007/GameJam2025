@@ -1,20 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtx1s7wos42wl"]
+[gd_scene load_steps=6 format=3 uid="uid://dtx1s7wos42wl"]
 
-[ext_resource type="Script" path="res://scripts/deathscreen.gd" id="1_uurjc"]
+[ext_resource type="Script" uid="uid://dtgqmifmtwkm8" path="res://scripts/deathscreen.gd" id="1_uurjc"]
 [ext_resource type="Texture2D" uid="uid://k0o271cywp7g" path="res://assets/deathscreen (1).png" id="1_ylnw1"]
 [ext_resource type="Texture2D" uid="uid://5iuauys8n35v" path="res://assets/Game.png" id="2_a17rc"]
-
-[sub_resource type="SystemFont" id="SystemFont_eye5d"]
-font_names = PackedStringArray("Suez One")
-
-[sub_resource type="SystemFont" id="SystemFont_hgqth"]
-font_names = PackedStringArray("Krona One")
-
-[sub_resource type="SystemFont" id="SystemFont_ke8wd"]
-font_names = PackedStringArray("Krona One")
-
-[sub_resource type="SystemFont" id="SystemFont_t1dl8"]
-font_names = PackedStringArray("Krona One")
+[ext_resource type="FontFile" uid="uid://bdw5hbxpkyr8y" path="res://assets/Fonts/Fontsr/suez-one-latin-ext-400-normal.ttf" id="4_ke8wd"]
+[ext_resource type="FontFile" uid="uid://c3uvdvl8itsl2" path="res://assets/Fonts/Fontsr/krona-one-latin-400-normal.ttf" id="5_t1dl8"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -43,7 +33,7 @@ offset_right = 1316.0
 offset_bottom = 451.0
 theme_override_colors/font_color = Color(0.733333, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_eye5d")
+theme_override_fonts/font = ExtResource("4_ke8wd")
 theme_override_font_sizes/font_size = 128
 text = "BURN OUT"
 
@@ -58,19 +48,19 @@ alignment = 1
 [node name="Rejouer" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_hgqth")
+theme_override_fonts/font = ExtResource("5_t1dl8")
 text = "Rejouer"
 
 [node name="Menu Principal" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_ke8wd")
+theme_override_fonts/font = ExtResource("5_t1dl8")
 text = "Menu Principal"
 
 [node name="Quitter" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_t1dl8")
+theme_override_fonts/font = ExtResource("5_t1dl8")
 text = "Quitter"
 
 [connection signal="pressed" from="VBoxContainer/Rejouer" to="." method="_on_rejouer_pressed"]
