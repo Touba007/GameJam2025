@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var son_toilettes: AudioStream
+@export var son_toilettes: AudioStreamPlayer2D
 @export var temps_disparition: float = 10.0
 
-@onready var player_audio = $AudioStreamPlayer
+@onready var player_audio = $AudioStreamPlayer2D
 @onready var timer = $Timer
 @onready var area = $Area2D
 

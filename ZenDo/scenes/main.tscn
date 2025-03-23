@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=56 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b43e2amn3vnbs" path="res://assets/Kitchen/cuisson.png" id="18_jau7c"]
 [ext_resource type="Script" path="res://scripts/StressBar.gd" id="19_v4pcy"]
 [ext_resource type="Texture2D" uid="uid://c7eq2knd76mlb" path="res://assets/Toilet/Toilet.png" id="22_3eh1q"]
+[ext_resource type="Script" path="res://scripts/Toilettes.gd" id="22_x10ff"]
 [ext_resource type="Texture2D" uid="uid://r60vwgx6tyo8" path="res://assets/Table object/Dishes.png" id="23_2r0rh"]
 [ext_resource type="Texture2D" uid="uid://bwyjo6mtucvx" path="res://assets/Table object/Plateau.png" id="24_umroj"]
 
@@ -419,6 +420,7 @@ script = ExtResource("19_v4pcy")
 
 [node name="Toilettes" type="StaticBody2D" parent="."]
 position = Vector2(913, 47)
+script = ExtResource("22_x10ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toilettes"]
 position = Vector2(0, -36)
@@ -433,6 +435,10 @@ texture = ExtResource("22_3eh1q")
 position = Vector2(1, -36)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_qc0i7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Toilettes"]
+
+[node name="Timer" type="Timer" parent="Toilettes"]
 
 [node name="Vaiselle" type="Sprite2D" parent="."]
 position = Vector2(68, 804)
@@ -450,3 +456,4 @@ texture = ExtResource("24_umroj")
 
 [connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_timer_timeout"]
