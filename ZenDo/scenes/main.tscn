@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=62 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -19,10 +19,14 @@
 [ext_resource type="Texture2D" uid="uid://c21n818f81fho" path="res://assets/Image/bar_round_large.png" id="17_15cf5"]
 [ext_resource type="Texture2D" uid="uid://bvp6j2am11pxj" path="res://assets/Kitchen/Close-fridge.png" id="17_kfnyp"]
 [ext_resource type="Texture2D" uid="uid://cosjwhgya2w0h" path="res://assets/Image/red.png" id="18_2kn2e"]
+[ext_resource type="Script" path="res://scripts/Evier.gd" id="18_7o1am"]
 [ext_resource type="Texture2D" uid="uid://b43e2amn3vnbs" path="res://assets/Kitchen/cuisson.png" id="18_jau7c"]
 [ext_resource type="Script" path="res://scripts/StressBar.gd" id="19_v4pcy"]
+[ext_resource type="Texture2D" uid="uid://cahe43dt3debe" path="res://assets/Kitchen/Water-cuisson.png" id="20_a3m5t"]
+[ext_resource type="AudioStream" uid="uid://lnjq1qcoh5tt" path="res://assets/Audio/sink.wav" id="21_5h41m"]
 [ext_resource type="Texture2D" uid="uid://c7eq2knd76mlb" path="res://assets/Toilet/Toilet.png" id="22_3eh1q"]
 [ext_resource type="Script" path="res://scripts/Toilettes.gd" id="22_x10ff"]
+[ext_resource type="Texture2D" uid="uid://r60vwgx6tyo8" path="res://assets/Table object/Dishes.png" id="23_2r0rh"]
 [ext_resource type="AudioStream" uid="uid://28rf7ymlh18l" path="res://assets/Audio/Bruits_thomas.mp3" id="24_bcwsf"]
 [ext_resource type="Texture2D" uid="uid://bwyjo6mtucvx" path="res://assets/Table object/Plateau.png" id="24_umroj"]
 
@@ -109,8 +113,16 @@ height = 431.17
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px5sk"]
 size = Vector2(151, 153)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owct6"]
+radius = 181.46
+height = 534.38
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s8bl"]
 size = Vector2(138, 743)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kgt3"]
+radius = 280.65
+height = 588.38
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk80j"]
 size = Vector2(204, 20)
@@ -394,14 +406,36 @@ shape = SubResource("RectangleShape2D_px5sk")
 [node name="Sprite2D" type="Sprite2D" parent="Kitchen/Frigo"]
 texture = ExtResource("17_kfnyp")
 
+[node name="Area2D" type="Area2D" parent="Kitchen/Frigo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Frigo/Area2D"]
+position = Vector2(94, -12.0003)
+rotation = 1.54811
+shape = SubResource("CapsuleShape2D_owct6")
+
 [node name="Cuisson" type="StaticBody2D" parent="Kitchen"]
 position = Vector2(69, 709)
+script = ExtResource("18_7o1am")
+texture_vide = ExtResource("18_jau7c")
+texture_plein = ExtResource("20_a3m5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cuisson"]
 shape = SubResource("RectangleShape2D_5s8bl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Kitchen/Cuisson"]
 texture = ExtResource("18_jau7c")
+
+[node name="Area2D" type="Area2D" parent="Kitchen/Cuisson"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cuisson/Area2D"]
+position = Vector2(-32, 339)
+shape = SubResource("CapsuleShape2D_2kgt3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Kitchen/Cuisson"]
+position = Vector2(-69, -709)
+stream = ExtResource("21_5h41m")
+
+[node name="Timer" type="Timer" parent="Kitchen/Cuisson"]
 
 [node name="StressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
@@ -452,6 +486,11 @@ texture = ExtResource("24_umroj")
 position = Vector2(713, 450)
 texture = ExtResource("24_umroj")
 
+[node name="Vaiselle" type="Sprite2D" parent="."]
+position = Vector2(70, 801)
+texture = ExtResource("23_2r0rh")
+
 [connection signal="timeout" from="Kitchen/Friteuses/Timer" to="Kitchen/Friteuses" method="_on_timer_timeout"]
 [connection signal="timeout" from="Kitchen/Friteuses2/Timer" to="Kitchen/Friteuses2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Kitchen/Cuisson/Timer" to="Kitchen/Cuisson" method="_on_timer_timeout"]
 [connection signal="timeout" from="Toilettes/Timer" to="Toilettes" method="_on_Timer_timeout"]
