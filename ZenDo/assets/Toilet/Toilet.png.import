@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beieitfiydbk0"
-path="res://.godot/imported/Bar.png-2ebcd6d782d8db92cf5bdd7e6096efc9.ctex"
+uid="uid://c7eq2knd76mlb"
+path="res://.godot/imported/Toilet.png-f9a8d3f2221ee5c49fcd6228749356e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Table/Bar.png"
-dest_files=["res://.godot/imported/Bar.png-2ebcd6d782d8db92cf5bdd7e6096efc9.ctex"]
+source_file="res://assets/Toilet/Toilet.png"
+dest_files=["res://.godot/imported/Toilet.png-f9a8d3f2221ee5c49fcd6228749356e0.ctex"]
 
 [params]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beg741yiafxc5"
+path="res://.godot/imported/chasse d'eau.mp3-41b96f4b3855bd9f08dd5e6cbbbb16b5.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/chasse d'eau.mp3"
+dest_files=["res://.godot/imported/chasse d'eau.mp3-41b96f4b3855bd9f08dd5e6cbbbb16b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

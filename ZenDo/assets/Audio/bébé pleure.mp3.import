@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl2366m7ultw8"
+path="res://.godot/imported/bébé pleure.mp3-71d2b00e84b4e986e523d69f835fc36e.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/bébé pleure.mp3"
+dest_files=["res://.godot/imported/bébé pleure.mp3-71d2b00e84b4e986e523d69f835fc36e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

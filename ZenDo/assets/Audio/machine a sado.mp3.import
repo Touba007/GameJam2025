@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2646ok8g6hyk"
+path="res://.godot/imported/machine a sado.mp3-b2b996a9a23afe1b7f8b61c2c572c9f4.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/machine a sado.mp3"
+dest_files=["res://.godot/imported/machine a sado.mp3-b2b996a9a23afe1b7f8b61c2c572c9f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
