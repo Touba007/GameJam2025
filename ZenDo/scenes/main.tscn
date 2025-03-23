@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=53 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
 [ext_resource type="AudioStream" uid="uid://b3cnkqyu3ong8" path="res://assets/Audio/friteuse.mp3" id="16_ybl8t"]
 [ext_resource type="Texture2D" uid="uid://c21n818f81fho" path="res://assets/Image/bar_round_large.png" id="17_15cf5"]
+[ext_resource type="Texture2D" uid="uid://bvp6j2am11pxj" path="res://assets/Kitchen/Close-fridge.png" id="17_kfnyp"]
 [ext_resource type="Texture2D" uid="uid://cosjwhgya2w0h" path="res://assets/Image/red.png" id="18_2kn2e"]
+[ext_resource type="Texture2D" uid="uid://b43e2amn3vnbs" path="res://assets/Kitchen/cuisson.png" id="18_jau7c"]
 [ext_resource type="Script" path="res://scripts/StressBar.gd" id="19_v4pcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
@@ -108,6 +110,12 @@ height = 430.5
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cxoy"]
 radius = 122.71
 height = 431.17
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px5sk"]
+size = Vector2(151, 153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s8bl"]
+size = Vector2(138, 743)
 
 [node name="Main" type="Node2D"]
 
@@ -401,9 +409,27 @@ shape = SubResource("CapsuleShape2D_3cxoy")
 stream = ExtResource("16_ybl8t")
 volume_db = 3.731
 
+[node name="Frigo" type="StaticBody2D" parent="Kitchen"]
+position = Vector2(574, 1005)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Frigo"]
+shape = SubResource("RectangleShape2D_px5sk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Frigo"]
+texture = ExtResource("17_kfnyp")
+
+[node name="Cuisson" type="StaticBody2D" parent="Kitchen"]
+position = Vector2(69, 709)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Cuisson"]
+shape = SubResource("RectangleShape2D_5s8bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Kitchen/Cuisson"]
+texture = ExtResource("18_jau7c")
+
 [node name="StressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-anchors_preset = -1
 offset_left = 387.0
 offset_top = 22.0
 offset_right = 741.0
