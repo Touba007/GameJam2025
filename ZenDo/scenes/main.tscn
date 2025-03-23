@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://2spsrl07jibm"]
+[gd_scene load_steps=68 format=3 uid="uid://2spsrl07jibm"]
 
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
@@ -15,14 +15,15 @@
 [ext_resource type="Script" path="res://scripts/Friteuses.gd" id="13_daivy"]
 [ext_resource type="Texture2D" uid="uid://cl5jypnebjs5w" path="res://assets/Kitchen/Ampty-Friers.png" id="14_u025s"]
 [ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
-[ext_resource type="AudioStream" uid="uid://b3cnkqyu3ong8" path="res://assets/Audio/friteuse.mp3" id="16_ybl8t"]
 [ext_resource type="Script" path="res://scripts/Frigo.gd" id="17_6nvr5"]
 [ext_resource type="Texture2D" uid="uid://c21n818f81fho" path="res://assets/Image/bar_round_large.png" id="17_15cf5"]
 [ext_resource type="Script" path="res://scripts/Frigo_UI.gd" id="17_ga22n"]
 [ext_resource type="Texture2D" uid="uid://bvp6j2am11pxj" path="res://assets/Kitchen/Close-fridge.png" id="17_kfnyp"]
 [ext_resource type="Texture2D" uid="uid://cosjwhgya2w0h" path="res://assets/Image/red.png" id="18_2kn2e"]
 [ext_resource type="Script" path="res://scripts/Evier.gd" id="18_7o1am"]
+[ext_resource type="Texture2D" uid="uid://3o8dyrq27bfm" path="res://assets/Kitchen/Low-Friers.png" id="18_djmnr"]
 [ext_resource type="Texture2D" uid="uid://b43e2amn3vnbs" path="res://assets/Kitchen/cuisson.png" id="18_jau7c"]
+[ext_resource type="AudioStream" uid="uid://cpaiwvwk8q41d" path="res://assets/Audio/Fondu-friteuse.wav" id="19_2b1xh"]
 [ext_resource type="Script" path="res://scripts/StressBar.gd" id="19_v4pcy"]
 [ext_resource type="Texture2D" uid="uid://cahe43dt3debe" path="res://assets/Kitchen/Water-cuisson.png" id="20_a3m5t"]
 [ext_resource type="AudioStream" uid="uid://lnjq1qcoh5tt" path="res://assets/Audio/sink.wav" id="21_5h41m"]
@@ -378,6 +379,7 @@ position = Vector2(92, 101)
 script = ExtResource("13_daivy")
 texture_vide = ExtResource("14_u025s")
 texture_pleine = ExtResource("15_adlen")
+texture_cuites = ExtResource("18_djmnr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Friteuses"]
 texture = ExtResource("14_u025s")
@@ -390,10 +392,8 @@ shape = SubResource("RectangleShape2D_d3wdw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Friteuses/Area2D"]
 shape = SubResource("CapsuleShape2D_0ag13")
 
-[node name="Timer" type="Timer" parent="Friteuses"]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Friteuses"]
-stream = ExtResource("16_ybl8t")
+stream = ExtResource("19_2b1xh")
 volume_db = 3.731
 
 [node name="Label" type="Label" parent="Friteuses"]
@@ -405,6 +405,7 @@ position = Vector2(277, 101)
 script = ExtResource("13_daivy")
 texture_vide = ExtResource("14_u025s")
 texture_pleine = ExtResource("15_adlen")
+texture_cuites = ExtResource("18_djmnr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Friteuses2"]
 texture = ExtResource("14_u025s")
@@ -418,10 +419,8 @@ shape = SubResource("RectangleShape2D_d3wdw")
 position = Vector2(31, 0)
 shape = SubResource("CapsuleShape2D_3cxoy")
 
-[node name="Timer" type="Timer" parent="Friteuses2"]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Friteuses2"]
-stream = ExtResource("16_ybl8t")
+stream = ExtResource("19_2b1xh")
 volume_db = 3.731
 
 [node name="Label" type="Label" parent="Friteuses2"]
@@ -592,8 +591,6 @@ offset_top = 500.0
 offset_right = 40.0
 offset_bottom = 523.0
 
-[connection signal="timeout" from="Friteuses/Timer" to="Friteuses" method="_on_timer_timeout"]
-[connection signal="timeout" from="Friteuses2/Timer" to="Friteuses2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Cuisson/Timer" to="Cuisson" method="_on_timer_timeout"]
 [connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/SteakButton" to="Frigo_UI" method="_on_steak_selected"]
 [connection signal="pressed" from="Frigo_UI/Panel/VBoxContainer/FritesButton" to="Frigo_UI" method="_on_frites_selected"]
