@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ZenDo"
-run/main_scene="uid://dtx1s7wos42wl"
+run/main_scene="uid://1vwfxj4317iq"
 config/features=PackedStringArray("4.4", "Mobile")
 
 [display]
