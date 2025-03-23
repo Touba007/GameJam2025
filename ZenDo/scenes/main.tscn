@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://ci41b2gofh3kl" path="res://assets/Perso/NPC-1.png" id="40_ywp4u"]
 [ext_resource type="Texture2D" uid="uid://e6nnci7ay3l2" path="res://assets/Perso/NPC-4.png" id="41_a8g58"]
 [ext_resource type="Texture2D" uid="uid://cy7lxmyaw2o1q" path="res://assets/Table object/Caise.png" id="42_ms3fl"]
-[ext_resource type="AudioStream" uid="uid://dq6uxvmjnnfog" path="res://assets/Audio/Bande son bip bip.mp3" id="43_1p7qi"]
+[ext_resource type="AudioStream" uid="uid://cjiqwhwghcf3f" path="res://assets/Audio/Bande son bip bip-2.mp3" id="45_u2jo0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
 radius = 65.0
@@ -496,7 +496,7 @@ volume_db = 20.987
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="StressBar"]
 stream = ExtResource("31_uhpf1")
-volume_db = 10.726
+volume_db = 16.789
 
 [node name="Frigo_UI" type="Control" parent="."]
 visible = false
@@ -559,7 +559,7 @@ shape = SubResource("CapsuleShape2D_qc0i7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Toilettes"]
 stream = ExtResource("24_bcwsf")
-volume_db = 4.664
+volume_db = 10.26
 
 [node name="Timer" type="Timer" parent="Toilettes"]
 
@@ -669,8 +669,8 @@ position = Vector2(-162, 315)
 texture = ExtResource("42_ms3fl")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("43_1p7qi")
-volume_db = 7.831
+stream = ExtResource("45_u2jo0")
+volume_db = 11.562
 autoplay = true
 
 [connection signal="timeout" from="Cuisson/Timer" to="Cuisson" method="_on_timer_timeout"]

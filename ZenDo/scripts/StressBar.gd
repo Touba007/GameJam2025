@@ -2,7 +2,7 @@ extends TextureProgressBar
 
 @export var max_stress: float = 100.0
 var stress: float = 0.0
-@export var stress_speed: float = 3.0  # stress par seconde
+@export var stress_speed: float = 2.5  # stress par seconde
 
 @export var content: Texture2D
 @export var medium: Texture2D
@@ -29,7 +29,7 @@ func _process(delta):
 		son.play()
 		sprite.texture = medium
 	else :
-		
+		sona.play()
 		sprite.texture = zehef
 		
 
