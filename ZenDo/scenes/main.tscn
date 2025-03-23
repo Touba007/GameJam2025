@@ -1,6 +1,5 @@
 [gd_scene load_steps=45 format=3 uid="uid://2spsrl07jibm"]
 
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_0rse2"]
 [ext_resource type="Script" path="res://scripts/PhysiquePerso.gd" id="2_cyy84"]
 [ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_sc6fd"]
@@ -16,19 +15,6 @@
 [ext_resource type="Script" path="res://scripts/Friteuses.gd" id="13_daivy"]
 [ext_resource type="Texture2D" uid="uid://cl5jypnebjs5w" path="res://assets/Kitchen/Ampty-Friers.png" id="14_u025s"]
 [ext_resource type="Texture2D" uid="uid://cmuas6kdaqspl" path="res://assets/Kitchen/Oil-Friers.png" id="15_adlen"]
-=======
-[ext_resource type="Texture2D" uid="uid://c2km4avc6wg0u" path="res://assets/Sol.png" id="1_ckyv7"]
-[ext_resource type="Script" uid="uid://v40b4v20ffju" path="res://scripts/PhysiquePerso.gd" id="2_1ynkl"]
-[ext_resource type="Texture2D" uid="uid://yikmlifvt2e4" path="res://assets/Perso/Perso-face.png" id="3_srx8n"]
-[ext_resource type="Texture2D" uid="uid://bm6k72tmjbyca" path="res://assets/Perso/Perso-back.png" id="4_v0bhv"]
-[ext_resource type="Texture2D" uid="uid://d3jxy086w8ag6" path="res://assets/Perso/Perso-left.png" id="5_1nodn"]
-[ext_resource type="Texture2D" uid="uid://d00nldyeheey6" path="res://assets/Perso/Perso-right.png" id="6_0vwmp"]
-[ext_resource type="Texture2D" uid="uid://du8x7k3ni36qi" path="res://assets/Chaise/Chair-face.png" id="7_wuy5p"]
-[ext_resource type="Texture2D" uid="uid://ghye515nhg7v" path="res://assets/Chaise/Chair-back.png" id="8_f2k2g"]
-[ext_resource type="Texture2D" uid="uid://cmwo1muuowm0m" path="res://assets/Table/small-table.png" id="9_4bhek"]
-[ext_resource type="Texture2D" uid="uid://bvc6tmrhv234v" path="res://assets/Chaise/banquette.png" id="9_wp6us"]
-[ext_resource type="Texture2D" uid="uid://u84ltgiupror" path="res://assets/Table/Table.png" id="11_iw4b1"]
->>>>>>> aabf409f273cb599cb8030db0ea53fae347db6e3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4apfa"]
 radius = 65.0
