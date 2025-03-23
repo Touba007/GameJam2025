@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtx1s7wos42wl"]
+[gd_scene load_steps=4 format=3 uid="uid://dtx1s7wos42wl"]
 
 [ext_resource type="Script" path="res://scripts/deathscreen.gd" id="1_uurjc"]
+[ext_resource type="Texture2D" uid="uid://k0o271cywp7g" path="res://assets/deathscreen (1).png" id="1_ylnw1"]
+[ext_resource type="Texture2D" uid="uid://5iuauys8n35v" path="res://assets/Game.png" id="2_a17rc"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -8,3 +10,42 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_uurjc")
+
+[node name="GameScreen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_a17rc")
+
+[node name="RedFilter" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_ylnw1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 475.0
+offset_right = 1449.0
+offset_bottom = 679.0
+alignment = 1
+
+[node name="Rejouer" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Rejouer"
+
+[node name="Menu Principal" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Menu Principal"
+
+[node name="Quitter" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/Rejouer" to="." method="_on_rejouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu Principal" to="." method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
